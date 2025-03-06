@@ -1,16 +1,22 @@
-//Two different styles to functions
-//This is the normal style of functions 
-const sayHello = function(){
-    return "Hello";
+/* 
+These are callback functions.
+A callback function is a function that is passed as an argument to another function to be executed later.
+*/
+function numberStuff (number, callbackFunction) {
+  return callbackFunction(number)
 }
-console.log(sayHello());
 
-//This is the arrow function style
-const sayGoodbye = () => {
-    return "Goodbye";
+function divideByTwo(num) {
+  return num / 2
 }
-console.log(sayGoodbye());
 
-//Another way to write the arrow function
-const sayHelloAgain = () => "Hello Again";
-console.log(sayHelloAgain());
+function double(num) {
+  return num * 2
+}
+
+function triple(num) {
+  return num * 3
+}
+console.log(numberStuff(8, divideByTwo))
+console.log(numberStuff(8, double))
+console.log(numberStuff(8, triple))
