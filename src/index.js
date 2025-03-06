@@ -1,20 +1,32 @@
 /* 
-Quick description of the map method.
-The map method only works on arrays. It uses the callback function to make each element inside the first array into a new element in a second array. The map method does not change the original array.
+More on the map method.
+It iterates over each element in the array so you don't have to specify the index or length of the array.
+It creates a new array with the results by calling a provided function on every element in the calling array.
+It does not change the original array. It returns a new array.
+It must return something from the callback function. The array will be undefined if the function doesn't return anything.
 */
+//Doom video example
+const backpackFullOfAmmo = [
+    { item: 'bullets', quantity: 10, priceEa: 0.5},
+    { item: 'shotgun shells', quantity: 4, priceEa: 1.0},
+    { item: 'rockets', quantity: 1, priceEa: 5.0},
+    { item: 'energy cell', quantity: 20, priceEa: 0.2},
+]
 
-//Without map method
-const numbers = [1, 2, 3, 4, 5];
-const doubledNumbers = []
-
-for (let i = 0; i < numbers.length; i++) {
-  doubledNumbers.push(numbers[i] * 2);
+function calculateOrderCost(order) {
+    return order.quantity * order.priceEa
 }
 
-console.log(doubledNumbers); 
+const totalValue = backpackFullOfAmmo.map((ammo) => {
+    console.log(ammo)
 
-//With map method
-const moreNumbers = [1, 2, 3, 4, 5];
-const doubledMoreNumbers = moreNumbers.map(number => number * 2);
-//The map method makes it easier to write code and is more readable
-console.log(doubledMoreNumbers);
+    return calculateOrderCost(ammo)
+    /* 
+    if this isn't here it will return undefined in the array
+    we can control what we want to return within the map method
+    we can create an array saying hi or in this case we are returning the quantity times the price.
+    */
+    
+})
+
+console.log(totalValue)
