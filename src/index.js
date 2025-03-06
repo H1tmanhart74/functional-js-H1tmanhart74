@@ -11,6 +11,6 @@ const sayGoodbye = () => {
 }
 console.log(sayGoodbye());
 
-//another way to write the arrow function
+//Another way to write the arrow function
 const sayHelloAgain = () => "Hello Again";
 console.log(sayHelloAgain());
