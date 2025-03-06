@@ -1,22 +1,20 @@
 /* 
-These are callback functions.
-A callback function is a function that is passed as an argument to another function to be executed later.
+Quick description of the map method.
+The map method only works on arrays. It uses the callback function to make each element inside the first array into a new element in a second array. The map method does not change the original array.
 */
-function numberStuff (number, callbackFunction) {
-  return callbackFunction(number)
+
+//Without map method
+const numbers = [1, 2, 3, 4, 5];
+const doubledNumbers = []
+
+for (let i = 0; i < numbers.length; i++) {
+  doubledNumbers.push(numbers[i] * 2);
 }
 
-function divideByTwo(num) {
-  return num / 2
-}
+console.log(doubledNumbers); 
 
-function double(num) {
-  return num * 2
-}
-
-function triple(num) {
-  return num * 3
-}
-console.log(numberStuff(8, divideByTwo))
-console.log(numberStuff(8, double))
-console.log(numberStuff(8, triple))
+//With map method
+const moreNumbers = [1, 2, 3, 4, 5];
+const doubledMoreNumbers = moreNumbers.map(number => number * 2);
+//The map method makes it easier to write code and is more readable
+console.log(doubledMoreNumbers);
