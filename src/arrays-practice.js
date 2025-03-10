@@ -1,4 +1,4 @@
-//This is an example for the some method
+//This is an example for the every method
 //Our classic doom players example
 const players = [
     {name: 'DoomGuy', frags: 25, deaths: 0},
@@ -6,8 +6,7 @@ const players = [
     {name: 'Marine', frags: 12, deaths: 15},
     {name: 'Noob', frags: 0, deaths: 25},
   ];
-//The some method will return a boolean value if it passes the condition
-//In this case we are checking if there are any frags
-const hasFrags = players.some((player) => player.frags);
+//The every method tests whether all elements in the array are true
+const allPlayersHaveMoreFragsThanDeaths = players.every(player => player.frags > player.deaths);
 
-console.log(hasFrags); //Since there are frags it is true
+console.log(allPlayersHaveMoreFragsThanDeaths); //Since not all players have more frags than deaths it is false
