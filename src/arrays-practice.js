@@ -1,4 +1,4 @@
-//This is an example for the reduce method
+//This is an example for the find method
 //Our classic doom players example
 const players = [
     {name: 'DoomGuy', frags: 25, deaths: 0},
@@ -6,16 +6,9 @@ const players = [
     {name: 'Marine', frags: 12, deaths: 15},
     {name: 'Noob', frags: 0, deaths: 25},
   ];
-//The reduce method is used to calculate a single value from frags of all players or the total number of frags
-  const totalFrags = players.reduce((total, players) => {
-    return total + players.frags; //This goes through each player and adds the frags to the total
-  }, 0); //This is the starting value of the total
+//The find method will return the first player that has more frags than deaths
+  const firstPlayerWithMoreFragsThanDeaths = players.find(player => player.frags > player.deaths); //This will go through the array and returns the first thing that matches the condition
 
-console.log(totalFrags);
-
-//This is a shortened version of the code above using an implicit return
-const totalFragsTwo = players.reduce((total, player) => total + player.frags, 0)
-
-console.log(totalFragsTwo)
+  console.log(firstPlayerWithMoreFragsThanDeaths); //Answer is DoomGuy with more frags than deaths
 
 
