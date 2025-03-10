@@ -1,4 +1,4 @@
-//This is an example for the every method
+//This is an example for the sort method
 //Our classic doom players example
 const players = [
     {name: 'DoomGuy', frags: 25, deaths: 0},
@@ -6,7 +6,7 @@ const players = [
     {name: 'Marine', frags: 12, deaths: 15},
     {name: 'Noob', frags: 0, deaths: 25},
   ];
-//The every method tests whether all elements in the array are true
-const allPlayersHaveMoreFragsThanDeaths = players.every(player => player.frags > player.deaths);
+//The sort method is used to sort the elements of an array. In this case it will sort the players by the number of frags they have.
+const sortedPlayers = players.sort((a, b) => b.frags - a.frags); //It also uses a minus instead of a plus to sort in descending order
 
-console.log(allPlayersHaveMoreFragsThanDeaths); //Since not all players have more frags than deaths it is false
+console.log(sortedPlayers); //This will show the sort of every frag in descending order
